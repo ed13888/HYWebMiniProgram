@@ -1,0 +1,2 @@
+<!--Page/AdminLogin/AdminLogin.wxml-->
+<button bindtap="test">登录</button>

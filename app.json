@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "Page/OrderSearch/OrderSearch",
+    "Page/OrderInfo/OrderInfo",
+    "Page/AdminLogin/AdminLogin",
+    "Page/AdminIndex/AdminIndex"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "Page/OrderSearch/OrderSearch",
+        "text": "订单查询",
+        "iconPath": "/home.png",
+        "selectedIconPath": "/home.png"
+      },
+      {
+        "pagePath": "Page/AdminLogin/AdminLogin",
+        "text": "订单管理",
+        "iconPath": "/home.png",
+        "selectedIconPath": "/home.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

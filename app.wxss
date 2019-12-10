@@ -1,0 +1,30 @@
+.weui-cell {
+  position: relative;
+  margin-top: 1.17647059em;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 17px;
+  padding: 10px 15px;
+}
+
+.weui-cell:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #d9d9d9;
+  color: #d9d9d9;
+}
+
+.weui-cell:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #d9d9d9;
+}

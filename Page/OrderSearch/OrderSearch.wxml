@@ -1,0 +1,11 @@
+<!--Page/OrderSearch/OrderSearch.wxml-->
+<view class="page">
+  <view class="weui-cell">
+    <input type="text" class="weui-input" value="{{orderNo}}" bindinput="OrderInput" auto-focus placeholder="请输入订单号" />
+  </view>
+  <button bindtap="search">查询</button>
+</view>
+
+<loading hidden="{{hidden}}">
+  加载中...
+</loading>
