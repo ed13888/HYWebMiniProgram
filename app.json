@@ -3,7 +3,9 @@
     "Page/OrderSearch/OrderSearch",
     "Page/OrderInfo/OrderInfo",
     "Page/AdminLogin/AdminLogin",
-    "Page/AdminIndex/AdminIndex"
+    "Page/AdminIndex/AdminIndex",
+    "Page/OrderEdit/OrderEdit",
+    "Page/OrderInsert/OrderInsert"
   ],
   "tabBar": {
     "list": [

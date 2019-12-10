@@ -1,2 +1,4 @@
 <!--Page/AdminIndex/AdminIndex.wxml-->
-<text>Page/AdminIndex/AdminIndex.wxml</text>
+<button bindtap="Insert">录入订单</button>
+
+<button bindtap="Edit">更新订单</button>

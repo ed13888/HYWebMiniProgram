@@ -1,2 +1,6 @@
 <!--Page/AdminLogin/AdminLogin.wxml-->
-<button bindtap="test">登录</button>
+<button bindtap="login">登录</button>
+
+<loading hidden="{{hidden}}">
+  登录中...
+</loading>

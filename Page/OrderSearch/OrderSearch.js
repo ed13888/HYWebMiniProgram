@@ -25,9 +25,11 @@ Page({
             }
           });
         }
-
       },
       error() {
+        that.changeHidden();
+      },
+      fail() {
         that.changeHidden();
       }
     })
