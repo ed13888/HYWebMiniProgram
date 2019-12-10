@@ -15,19 +15,35 @@ Page({
     wx.request({
       url: 'https://chaogege.vip/Values/SearchOrder?orderNo=' + orderNo,
       success(res) {
-        that.changeHidden();
         console.log(res.data);
         if (res.data.Passed) {
           wx.navigateTo({
             url: '../OrderInfo/OrderInfo?json=' + JSON.stringify(res.data.Data),
             success: function(res) {
               console.log(1);
+              that.changeHidden();
+            },
+            fail() {
+              that.changeHidden();
+            }
+          });
+        } else {
+          // wx.showToast({
+          //   title: '该订单不存在！',
+          //   icon: 'succes',
+          //   duration: 3000,
+          //   mask: true
+          // });
+          that.changeHidden();
+          wx.showModal({
+            title: '提示',
+            content: '该订单不存在！',
+            success: function(res) {
+
             }
           });
         }
-      },
-      error() {
-        that.changeHidden();
+
       },
       fail() {
         that.changeHidden();
