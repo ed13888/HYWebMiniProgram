@@ -19,6 +19,17 @@ Page({
       hidden: !this.data.hidden
     });
   },
+  Scan: function() {
+    var that = this;
+    wx.scanCode({
+      success(res) {
+        console.log(res)
+        that.setData({
+          orderNo: res.result
+        });
+      }
+    })
+  },
   Insert: function() {
     var that = this;
     that.changeHidden();

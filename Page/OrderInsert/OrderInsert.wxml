@@ -3,6 +3,7 @@
   <view class="weui-cell">
     <input type="text" class="weui-input" value="{{orderNo}}" bindinput="OrderNoInput" focus="{{focus}}" placeholder="请输入订单号" />
   </view>
+  <button bindtap="Scan">扫码</button>
   <button bindtap="Insert">签收</button>
 </view>
 
