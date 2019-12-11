@@ -6,6 +6,7 @@ Page({
    */
   data: {
     hidden: true,
+    focus: true,
     orderNo: ""
   },
   OrderNoInput: function(e) {
@@ -34,12 +35,20 @@ Page({
       success(res) {
         that.changeHidden();
         console.log(res.data);
-        if (res.Data.Passed) {
+        if (res.data.Passed) {
           that.setData({
-            orderNo: ""
+            orderNo: "",
+            focus: true
           });
           wx.showToast({
             title: '添加成功！',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          });
+        } else {
+          wx.showToast({
+            title: '添加失败！',
             icon: 'succes',
             duration: 1000,
             mask: true
@@ -49,7 +58,7 @@ Page({
       fail() {
         that.changeHidden();
       }
-    })
+    });
   },
   /**
    * 生命周期函数--监听页面加载
