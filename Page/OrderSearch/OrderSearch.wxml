@@ -9,6 +9,6 @@
   <button class="btn-search" bindtap="search">查询</button>
 </view>
 
-<loading hidden="{{hidden}}">
+<!-- <loading hidden="{{hidden}}">
   加载中...
-</loading>
+</loading> -->

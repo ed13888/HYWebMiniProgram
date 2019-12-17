@@ -1,4 +1,5 @@
 // Page/OrderInsert/OrderInsert.js
+var app = getApp();
 Page({
 
   /**
@@ -35,7 +36,7 @@ Page({
     that.changeHidden();
     var orderNo = this.data.orderNo;
     wx.request({
-      url: 'https://chaogege.vip/Values/InsertOrder',
+      url: app.globalData.domain + '/Values/InsertOrder',
       data: {
         OrderNo: orderNo
       },

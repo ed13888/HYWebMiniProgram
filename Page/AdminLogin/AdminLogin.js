@@ -1,11 +1,12 @@
 // Page/AdminLogin/AdminLogin.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hidden: true,
+    hidden: false,
   },
   changeHidden: function() {
     this.setData({
@@ -14,17 +15,21 @@ Page({
   },
   login: function() {
     var that = this;
-    that.changeHidden();
+    wx.showLoading({
+      title: '授权验证中...',
+    });
+    //that.changeHidden();
     wx.login({
       success(res) {
         console.log(res);
         wx.request({
-          url: 'https://chaogege.vip/Values/ValidateUserPrivilege?code=' + res.code,
+          url: app.globalData.domain + '/Values/ValidateUserPrivilege?code=' + res.code,
           success: function(result) {
             console.log(result.errMsg)
+            wx.hideLoading();
             if (result.data.Passed) {
               wx.navigateTo({
-                url: '../AdminIndex/AdminIndex',
+                url: '/Page/AdminIndex/AdminIndex',
                 success: function(res) {
                   console.log(res);
                 },
@@ -32,16 +37,29 @@ Page({
                   console.log(e);
                 }
               });
-              that.changeHidden();
+            } else {
+              //没有权限
+
+              wx.showToast({
+                title: '权限不足!',
+                icon: 'success',
+                duration: 2000
+              });
+
+              setTimeout(function() {
+                wx.switchTab({
+                  url: '/Page/OrderSearch/OrderSearch'
+                });
+              }, 2000);
             }
           },
           fail() {
-            that.changeHidden();
+            wx.hideLoading();
           }
         })
       },
       fail() {
-        that.changeHidden();
+        wx.hideLoading();
       }
     });
   },
@@ -63,7 +81,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    // setTimeout(this.login, 2000);
   },
 
   /**

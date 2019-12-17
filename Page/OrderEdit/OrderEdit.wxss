@@ -1,1 +1,14 @@
 /* Page/OrderEdit/OrderEdit.wxss */
+
+.weui-input {
+  padding: 20rpx 40rpx;
+}
+
+.btn-update {
+  width: 100vw;
+  background-color: #2c2c2c;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

@@ -1,27 +1,27 @@
 <!--Page/OrderEdit/OrderEdit.wxml-->
 <view class="page">
   <view class="weui-cell">
-    <picker mode="date" value="{{begindate}}" start="2015-09-01" end="2055-09-01" bindchange="bindBeginDateChange">
+    <picker class="weui-input" mode="date" value="{{begindate}}" start="2015-09-01" end="2055-09-01" bindchange="bindBeginDateChange">
       <view class="picker">
         开始时间: {{begindate}}
       </view>
     </picker>
   </view>
   <view class="weui-cell">
-    <picker mode="date" value="{{enddate}}" start="2015-09-01" end="2055-09-01" bindchange="bindEndDateChange">
+    <picker class="weui-input" mode="date" value="{{enddate}}" start="2015-09-01" end="2055-09-01" bindchange="bindEndDateChange">
       <view class="picker">
         结束时间: {{enddate}}
       </view>
     </picker>
   </view>
   <view class="weui-cell">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <picker class="weui-input" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       <view class="picker">
         订单状态：{{array[index]}}
       </view>
     </picker>
   </view>
-  <button bindtap="Update">更新</button>
+  <button class="btn-update" bindtap="Update">更新</button>
 </view>
 
 <loading hidden="{{hidden}}">

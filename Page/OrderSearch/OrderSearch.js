@@ -1,4 +1,5 @@
 // Page/OrderSearch/OrderSearch.js
+var app = getApp();
 Page({
 
   /**
@@ -6,7 +7,7 @@ Page({
    */
   data: {
     hidden: true,
-    orderNo: "test001"
+    orderNo: ""
   },
   Scan: function() {
     var that = this;
@@ -21,21 +22,30 @@ Page({
   },
   search: function(e) {
     var that = this;
-    that.changeHidden();
+    wx.showLoading({
+      title: '查询中...',
+    });
+    console.log("search..");
+    console.log("app.globalData.domain" + app.globalData.domain);
+    // that.changeHidden();
     var orderNo = this.data.orderNo;
     wx.request({
-      url: 'https://chaogege.vip/Values/SearchOrder?orderNo=' + orderNo,
+      url: app.globalData.domain + '/Values/SearchOrder?orderNo=' + orderNo,
       success(res) {
+        console.log("success");
         console.log(res.data);
         if (res.data.Passed) {
           wx.navigateTo({
-            url: '../OrderInfo/OrderInfo?json=' + JSON.stringify(res.data.Data),
+            url: '/Page/OrderInfo/OrderInfo?json=' + JSON.stringify(res.data.Data),
             success: function(res) {
-              console.log(1);
-              that.changeHidden();
+              console.log(res);
+              // that.changeHidden();
+              wx.hideLoading();
             },
-            fail() {
-              that.changeHidden();
+            fail(e) {
+              console.log(e);
+              // that.changeHidden();
+              wx.hideLoading();
             }
           });
         } else {
@@ -45,7 +55,8 @@ Page({
           //   duration: 3000,
           //   mask: true
           // });
-          that.changeHidden();
+          // that.changeHidden();
+          wx.hideLoading();
           wx.showModal({
             title: '提示',
             content: '该订单不存在！',
@@ -56,10 +67,13 @@ Page({
         }
 
       },
-      fail() {
-        that.changeHidden();
+      fail(e) {
+        console.log("fail");
+        console.log(e);
+        wx.hideLoading();
+        // that.changeHidden();
       }
-    })
+    });
   },
   OrderInput: function(e) {
     this.setData({

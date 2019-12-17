@@ -1,4 +1,5 @@
 // Page/OrderEdit/OrderEdit.js
+var app = getApp();
 Page({
 
   /**
@@ -41,7 +42,7 @@ Page({
     var enddate = this.data.enddate;
     var state = (parseInt(this.data.index) + 1) + '';
     wx.request({
-      url: 'https://chaogege.vip/Values/UpdateOrderState',
+      url: app.globalData.domain + '/Values/UpdateOrderState',
       data: {
         BeginTime: begindate,
         EndTime: enddate,
