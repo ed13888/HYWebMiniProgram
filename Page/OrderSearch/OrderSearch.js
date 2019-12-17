@@ -8,6 +8,17 @@ Page({
     hidden: true,
     orderNo: "test001"
   },
+  Scan: function() {
+    var that = this;
+    wx.scanCode({
+      success(res) {
+        console.log(res)
+        that.setData({
+          orderNo: res.result
+        });
+      }
+    })
+  },
   search: function(e) {
     var that = this;
     that.changeHidden();

@@ -1,1 +1,44 @@
 /* Page/OrderSearch/OrderSearch.wxss */
+
+.weui-input {
+  border-radius: 45rpx;
+  background-color: #f1f1f1;
+  padding: 20rpx 40rpx;
+}
+
+.orderno-cell {
+  height: 100rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.orderno-input {
+  margin-right: 100rpx;
+}
+
+.btn-scan {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.btn-scan::after {
+  border: none;
+}
+
+.btn-scan image {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-search {
+  background-color: #1296db;
+  color: #fff;
+}

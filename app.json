@@ -8,18 +8,19 @@
     "Page/OrderInsert/OrderInsert"
   ],
   "tabBar": {
+    "selectedColor": "#2c2c2c",
     "list": [
       {
         "pagePath": "Page/OrderSearch/OrderSearch",
         "text": "订单查询",
-        "iconPath": "/home.png",
-        "selectedIconPath": "/home.png"
+        "iconPath": "/search.png",
+        "selectedIconPath": "/search-active.png"
       },
       {
         "pagePath": "Page/AdminLogin/AdminLogin",
         "text": "订单管理",
-        "iconPath": "/home.png",
-        "selectedIconPath": "/home.png"
+        "iconPath": "/admin.png",
+        "selectedIconPath": "/admin-active.png"
       }
     ]
   },

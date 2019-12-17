@@ -1,6 +1,6 @@
 <!--Page/AdminLogin/AdminLogin.wxml-->
-<button bindtap="login">登录</button>
+<button bindtap="login">授权验证</button>
 
 <loading hidden="{{hidden}}">
-  登录中...
+  授权验证中...
 </loading>

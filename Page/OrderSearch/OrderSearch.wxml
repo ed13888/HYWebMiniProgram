@@ -1,9 +1,12 @@
 <!--Page/OrderSearch/OrderSearch.wxml-->
 <view class="page">
-  <view class="weui-cell">
-    <input type="text" class="weui-input" value="{{orderNo}}" bindinput="OrderInput" placeholder="请输入订单号" />
+  <view class="weui-cell orderno-cell">
+    <input type="text" class="weui-input orderno-input" value="{{orderNo}}" bindinput="OrderInput" placeholder="请输入订单号" />
+    <button class="btn-scan" bindtap="Scan">
+      <image src='../../scan.png' mode="scaleToFill"></image>
+    </button>
   </view>
-  <button bindtap="search">查询</button>
+  <button class="btn-search" bindtap="search">查询</button>
 </view>
 
 <loading hidden="{{hidden}}">
